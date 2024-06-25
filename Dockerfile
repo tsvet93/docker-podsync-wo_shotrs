@@ -5,7 +5,7 @@ ENV UPSTREAM_VERSION=${UPSTREAM_VERSION}
 LABEL stage=builder
 WORKDIR /workspace
 #hadolint ignore=DL4006
-RUN wget -nv -O - https://github.com/mxpv/podsync/archive/${UPSTREAM_VERSION}.tar.gz | tar -xz --strip-components=1; go build -o /bin/podsync ./cmd/podsync
+RUN wget -nv -O - https://github.com/tsvet93/podsync/archive/${UPSTREAM_VERSION}.tar.gz | tar -xz --strip-components=1; go build -o /bin/podsync ./cmd/podsync
 
 FROM alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede212a0c4394e0
 WORKDIR /app/
